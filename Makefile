@@ -9,3 +9,6 @@ push:
 	git add .
 	git commit -m "$*" 
 	git push origin branchname
+
+deploy:
+	npm run deploy

@@ -6,17 +6,34 @@ import './Navbar.css'
 function renderbody(element) {
     ReactDom.render(element, document.getElementById("navBody"))
 }
+
+const home = <div className="navBody page1">hello</div>;
+const casa = (
+    <div className="navBody page2">
+                Welcome Joel
+                <img src={logo}></img>
+                </div>);
+const page3 = <div className="navBody page3">hello</div>;
+const page4 = <div className="navBody page4">hello</div>;
+const page5 = <div className="navBody page5">hello</div>;
+
+
+
 class Navbar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <Navbutton1 value="pro">  </Navbutton1>
-                <Navbutton2 value="button2">  </Navbutton2>
-                <Navbutton3 value="button">  </Navbutton3>
-                <Navbutton4 value="button">  </Navbutton4>
-                <Navbutton5 value="button">  </Navbutton5>
+                <Navbutton body={home}> pro </Navbutton>
+                <Navbutton body={casa}> button </Navbutton>
+                <Navbutton body={page3}> button </Navbutton>
+                <Navbutton body={page4}> button </Navbutton>
+                <Navbutton body={page5}> button </Navbutton>
             </div>
         )
+    }
+
+    componentDidMount () {
+        renderbody(home)
     }
 }
 
@@ -24,48 +41,13 @@ class Navbutton extends React.Component {
     render() {
         return (
         
-            <span className="navbutton" onClick={this.handleClick}> {this.props.value} </span>
+            <span className="navbutton" onClick={this.handleClick}> {this.props.children} </span>
     
         )
     }
- }
- class Navbutton1 extends Navbutton {
-     handleClick() {
-            renderbody(
-                <div className="navBody page1">hello</div>
-            )
-     }
- }
- class Navbutton2 extends Navbutton {
-    handleClick() {
-           renderbody(
-               <div className="navBody page2">
-                   Welcome Joel
-                   <img src={logo}></img>
-               </div>
-               )
-            }
-        }
- class Navbutton3 extends Navbutton {
-    handleClick() {
-        renderbody(
-            <div className="navBody page3">hello</div>
-            )
-        }
+    
+    handleClick = () => {
+        renderbody(this.props.body)
     }
-
-class Navbutton4 extends Navbutton {
-    handleClick() {
-            renderbody(
-                <div className="navBody page4">hello</div>
-                )
-    }
-}
-class Navbutton5 extends Navbutton {
-    handleClick() {
-           renderbody(
-               <div className="navBody page5">hello</div>
-               )
-            }
-        }
+ }
 export default Navbar;
