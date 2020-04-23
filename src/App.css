@@ -1,10 +1,17 @@
 html, body, #App, #root {
-  height: 100%
+  perspective: 2000px;
+  height: 100%;
 }
-
+#App {
+  background: radial-gradient(circle, #f6afc9 43%, transparent 0) 0 0 / 4em 4em , 
+  radial-gradient(circle, #f6afc9 43%, transparent 0) 2em 2em / 8em 8em;
+  background-color: #ffeafe;
+  animation: pulse 3s linear infinite;
+}
 .App {
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -38,5 +45,12 @@ html, body, #App, #root {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  50% {background-position: 0.66em 0.66em, -0.33em -0.33em;}
+  100% {
+      background-size: 8em 8em, 4em 4em;
+      background-position: -1.5em -1.5em, -1em -1em;
   }
 }
