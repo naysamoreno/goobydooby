@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import logo from './logo.svg';
+import hand from './pictures/hand.jpg';
 import './Navbar.css'
 import { gsap,TimelineLite } from 'gsap/all'
 function Animation() {
@@ -27,11 +28,15 @@ function renderbody(element) {
 const home = <div className="navBody page1"></div>;
 const casa = (
     <div className="navBody page2">
-                Welcome Joel
-                <img src={logo} alt="logo"></img>
+                Welcome 2 My Crib
+                <img src={hand} width="500px" height="800" alt="hand"></img>
                 </div>);
-const page3 = <div className="navBody page3"></div>;
-const page4 = <div className="navBody page4"></div>;
+const page3 = <div className="navBody page3">
+                I SEE YOU CLICKED HERE
+                </div>;
+const page4 = <div className="navBody page4">
+                Is cute af (:
+                </div>;
 const page5 = <div className="navBody page5"></div>;
 
 
@@ -40,11 +45,11 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <Navbutton body={home}> pro </Navbutton>
-                <Navbutton body={casa}> button </Navbutton>
-                <Navbutton body={page3}> button </Navbutton>
-                <Navbutton body={page4}> button </Navbutton>
-                <Navbutton body={page5}> button </Navbutton>
+                <Navbutton body={home}> Home </Navbutton>
+                <Navbutton body={casa}> press here </Navbutton>
+                <Navbutton body={page3}> click here </Navbutton>
+                <Navbutton body={page4}> your momma </Navbutton>
+                <Navbutton body={page5}> last page </Navbutton>
             </div>
         )
     }

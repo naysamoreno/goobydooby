@@ -55,7 +55,23 @@
 
 .page3 {
     background-color: crimson;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #918cd4 43%, transparent 0) 0 0 / 0.8em 0.8em , 
+    radial-gradient(circle, #f6afc9 43%, transparent 0) 0.4em 0.4em / 0.4em 0.4em;
+    background-color: #ffeafe;
+    animation: pulse 5s linear infinite;
 }
 .page4 {
-    background-color: darkblue;
+    background-color: hotpink;
+    font-size: xx-large;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
