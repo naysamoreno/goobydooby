@@ -16,12 +16,12 @@ function Animation() {
 function renderbody(element) {
     const navBody = document.getElementById("navBody");
     Animation()
-    // .to(navBody, 0.5, {x: -2000, opacity: 0})
-    // .to(navBody, 0, {x: 2000, onComplete: () => ReactDom.render(element, navBody)})
-    // .to(navBody, 0.4, {x: 0, opacity: 1, ease: "elastic.out(.75, 1)"})
-    .to(navBody, 0, {rotationZ: 180, rotationY: 180})
-    .to(navBody, 0.8, {rotationX: 90, onComplete: () => ReactDom.render(element, navBody)})
-    .to(navBody, 0.8, {rotationX: 180})
+    .to(navBody, 0.5, {x: -2000, opacity: 0})
+    .to(navBody, 0, {x: 2000, onComplete: () => ReactDom.render(element, navBody)})
+    .to(navBody, 0.4, {x: 0, opacity: 1, ease: "elastic.out(.75, 1)"})
+    // .to(navBody, 0, {rotationZ: 180, rotationY: 180})
+    // .to(navBody, 0.8, {rotationX: 90, onComplete: () => ReactDom.render(element, navBody)})
+    // .to(navBody, 0.8, {rotationX: 180})
     .play();
 }
 
@@ -32,7 +32,11 @@ const casa = (
                 <img src={hand} width="500px" height="800" alt="hand"></img>
                 </div>);
 const page3 = <div className="navBody page3">
+                <h1 className="text"> 
                 I SEE YOU CLICKED HERE
+                </h1>
+                <iframe className="video" src="https://www.youtube.com/embed/DR6TtBmJ-CE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe className="albumEmbed" src="https://open.spotify.com/embed/album/46tsdG65ya5HOL8sUf5CS1" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>;
 const page4 = <div className="navBody page4">
                 Is cute af (:

@@ -7,7 +7,8 @@ hello:
 push:
 	branchname=$(git describe --contains --all HEAD)
 	git add .
-	git commit -m $(m) 
+	git commit -m $(mmake ) 
+	git push origin master
 	git push origin branchname
 
 deploy:
