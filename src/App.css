@@ -6,7 +6,7 @@ html, body, #App, #root {
   background: radial-gradient(circle, #f6afc9 43%, transparent 0) 0 0 / 4em 4em , 
   radial-gradient(circle, #f6afc9 43%, transparent 0) 2em 2em / 8em 8em;
   background-color: #ffeafe;
-  animation: pulse 3s linear infinite;
+  /* animation: pulse 3s linear infinite; */
 }
 .App {
   text-align: center;

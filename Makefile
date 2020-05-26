@@ -12,4 +12,6 @@ push:
 	git push origin branchname
 
 deploy:
+	npm run build
 	npm run deploy
+

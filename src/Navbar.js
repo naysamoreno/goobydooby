@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import hand from './pictures/hand.jpg';
 import './Navbar.css'
 import { gsap,TimelineLite } from 'gsap/all'
+import Visualizer from './3D shit/Visualizer'
 function Animation() {
     const navBody = document.getElementById("navBody")
     const animation = new TimelineLite({onComplete: () => {
@@ -38,9 +39,7 @@ const page3 = <div className="navBody page3">
                 <iframe className="video" src="https://www.youtube.com/embed/DR6TtBmJ-CE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <iframe className="albumEmbed" src="https://open.spotify.com/embed/album/46tsdG65ya5HOL8sUf5CS1" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>;
-const page4 = <div className="navBody page4">
-                Is cute af (:
-                </div>;
+const page4 = <Visualizer></Visualizer>
 const page5 = <div className="navBody page5"></div>;
 
 
