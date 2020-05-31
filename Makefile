@@ -17,6 +17,7 @@ push:
 # make new branch
 branch:
 	git checkout -b $(branchname) 
+# switch to already existing branch --- git checkout $(branchname) 
 # reverts all changes
 revert:
 	git checkout -- .
