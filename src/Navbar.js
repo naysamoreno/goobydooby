@@ -44,6 +44,19 @@ const page3 = <div className="navBody page3">
 const page4 = <Visualizer song={FlowSong}></Visualizer>
 
 const page5 = <div className="navBody page5"></div>;
+// for HTML style="color:red"
+const page6 = <div className="navBody page6">
+                <h1 style={{
+                    color: "red",
+                    position: 'fixed',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    }}> 
+        
+                Welcome to page 6
+                </h1>
+</div>
 
 
 
@@ -56,6 +69,8 @@ class Navbar extends React.Component {
                 <Navbutton body={page3}> click here </Navbutton>
                 <Navbutton body={page4}> your momma </Navbutton>
                 <Navbutton body={page5}> last page </Navbutton>
+                <Navbutton body={page6}> Sike </Navbutton>
+
             </div>
         )
     }

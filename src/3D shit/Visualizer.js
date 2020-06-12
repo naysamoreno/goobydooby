@@ -1,6 +1,7 @@
 import React from "react"
 import * as THREE from "three"
 import {getRandomRetroColor} from "../Util"
+import AudioPlayer from"../buttons/AudioPlayer"
 
 class Visualizer extends React.Component {
     componentDidMount() {
@@ -31,7 +32,7 @@ class Visualizer extends React.Component {
         this.renderer.shadowMap.enabled = true
         this.mount.appendChild(this.renderer.domElement) 
         this.renderer.render(this.scene, this.camera)   
-        this.update() 
+
     }
 
     generateMatrix() {
@@ -54,32 +55,28 @@ class Visualizer extends React.Component {
         // this.wesh.rotation.x -= 0.01
         this.mesh.rotation.x += 0.01
 
-        this.audioAnalyser.getByteFrequencyData(this.frequencyList)
-        const amplitude = (this.frequencyList[0] / 50) + 1
+        const frequencyList = this.audioPlayer.getFrequencyData()
+        const amplitude = (frequencyList[0] / 50) + 1
         console.log(amplitude)
         this.mesh.scale.set(amplitude, amplitude, amplitude)  
         this.wesh.scale.set(amplitude, amplitude, amplitude)
 
         this.renderer.render(this.scene, this.camera)
     }
-// https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API 
+
     setUpAudio = () => {
-        const AudioContext = window.AudioContext || window.webkitAudioContext
-        const audioContext = new AudioContext()
-        this.audioAnalyser = audioContext.createAnalyser()
-        // list of frequencies in song
-        this.frequencyList = new Uint8Array(this.audioAnalyser.frequencyBinCount)
-        const audio = new Audio()
-        audio.crossOrigin = "anonymous"
-        audio.controls = false
-        audio.src = this.props.song 
-        this.mount.appendChild(audio)
-        audio.addEventListener("canplay", function() {
-            const audioSource = audioContext.createMediaElementSource(audio) 
-            audioSource.connect(this.audioAnalyser)
-            this.audioAnalyser.connect(audioContext.destination)
-            audio.play()
-       }.bind(this) )
+        this.audioPlayer = new AudioPlayer({
+            camera: this.camera,
+            song: this.props.song,
+            onAudioPlay: this.onAudioPlay,
+            frequencyCount: 128
+        })
+        this.mount.appendChild(this.audioPlayer.button);
+    }
+
+    onAudioPlay = () => {
+        this.mount.removeChild(this.audioPlayer.button);
+        this.update()
     }
 
 

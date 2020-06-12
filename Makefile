@@ -21,4 +21,3 @@ branch:
 # reverts all changes
 revert:
 	git checkout -- .
-
